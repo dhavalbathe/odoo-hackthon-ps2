@@ -1,24 +1,25 @@
 const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
+const connectDB = require('./db');
+const cookieParser = require('cookie-parser');
 
-// Load environment variables
 dotenv.config();
 
 const app = express();
+connectDB();
 
-// Middleware
 app.use(express.json());
-
-// Allow CORS from Vite frontend (localhost:5173)
+app.use(cookieParser());
 app.use(cors({
   origin: process.env.FRONTEND_URL,
-  credentials: true
+  credentials: true,
 }));
 
-// Sample route
+app.use('/questions', require('./routes/questionRoutes'));
+
 app.get('/', (req, res) => {
-  res.json({message: "Server is running at 3000"})
+  res.json({ message: "Server is running" });
 });
 
 const PORT = process.env.PORT || 3000;
