@@ -1,8 +1,10 @@
 import { useState } from 'react';
 import { User, Mail, Lock, UserCheck, ArrowRight } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
+import API from '../api/api';
 
 export const Register = () => {
+
   const [formData, setFormData] = useState({
     username: '',
     email: '',
@@ -64,19 +66,16 @@ export const Register = () => {
     if (!validateForm()) return;
 
     setIsSubmitting(true);
+    console.log("submiting form data", formData);
 
     try {
-      await new Promise(resolve => setTimeout(resolve, 1000)); // Simulate API call
-
-      const userData = {
-        username: formData.username.trim(),
-        email: formData.email.toLowerCase().trim(),
-        password: formData.password,
-        role: formData.role
-      };
+        console.log("Submitting registration data:", formData);
+      const res = await API.post('/register', formData);
+      console.log(res);
 
       console.log('Registration data:', userData);
       setCurrentPage('success');
+      navigate('/login')
 
     } catch (error) {
       console.error('Registration error:', error);
