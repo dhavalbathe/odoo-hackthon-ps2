@@ -89,28 +89,27 @@ export const Register = () => {
     navigate('/login');
   };
 
-  return currentPage === 'success' ? (
-    // ✅ Success Page
-    <div className="min-h-screen bg-gradient-to-br from-green-50 via-blue-50 to-purple-50 flex items-center justify-center p-4">
-      <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl w-full max-w-md p-8 text-center border border-green-100">
-        <div className="bg-gradient-to-r from-green-400 to-blue-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
-          <UserCheck className="w-8 h-8 text-white" />
-        </div>
-        <h2 className="text-2xl font-bold bg-gradient-to-r from-green-600 to-blue-600 bg-clip-text text-transparent mb-4">
-          Registration Successful!
-        </h2>
-        <p className="text-gray-600 mb-6">
-          Your account has been created successfully. You can now sign in with your credentials.
-        </p>
-        <button
-          onClick={handleBackToRegister}
-          className="bg-gradient-to-r from-green-500 to-blue-500 hover:from-green-600 hover:to-blue-600 text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105"
-        >
-          Log In
-        </button>
+return currentPage === 'success' ? (
+  <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-violet-100 flex items-center justify-center p-4">
+    <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl w-full max-w-md p-8 text-center border border-purple-100">
+      <div className="bg-gradient-to-r from-purple-500 to-pink-500 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+        <UserCheck className="w-8 h-8 text-white" />
       </div>
+      <h2 className="text-2xl font-bold bg-gradient-to-r from-purple-700 to-pink-600 bg-clip-text text-transparent mb-4">
+        Registration Successful!
+      </h2>
+      <p className="text-gray-600 mb-6">
+        Your account has been created successfully. You can now sign in with your credentials.
+      </p>
+      <button
+        onClick={handleBackToRegister}
+        className="bg-gradient-to-r from-purple-500 to-pink-500 hover:from-purple-600 hover:to-pink-600 text-white px-6 py-2 rounded-full transition-all duration-200 transform hover:scale-105"
+      >
+        Log In
+      </button>
     </div>
-  ) : (
+  </div>
+) : (
     // ✅ Registration Form Page
     <div className="min-h-screen bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 flex items-center justify-center p-4">
       <div className="bg-white/80 backdrop-blur-sm rounded-2xl shadow-2xl w-full max-w-5xl border border-purple-100 overflow-hidden">

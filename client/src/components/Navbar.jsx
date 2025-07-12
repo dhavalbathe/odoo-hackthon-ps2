@@ -10,12 +10,7 @@ export const Navbar = () => {
   const [currentPage, setCurrentPage] = useState('Home');
   const [searchQuery, setSearchQuery] = useState('');
 
-  const [user, setUser] = useState({
-    isLoggedIn: true,
-    name: 'John Doe',
-    avatar: 'https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=40&h=40&fit=crop&crop=face&auto=format',
-    email: 'john@example.com'
-  });
+  const [user, setUser] = useState(false);
 
   const [notifications] = useState([
     { id: 1, message: 'New answer on your question', time: '2 hours ago', unread: true },
