@@ -43,7 +43,7 @@ export const Navbar = () => {
     else if (page === 'My Questions') navigate('/my-questions');
     else if (page === 'Settings') navigate('/settings');
     else if (page === 'Login') navigate('/login');
-    else if (page === 'Sign Up') navigate('/signup');
+    else if (page === 'Sign Up') navigate('/register');
     else if (page === 'Notifications') navigate('/notifications');
   };
 
